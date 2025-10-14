@@ -1,0 +1,91 @@
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.carousel-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card {
+  flex: 0 0 25%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  transition: transform 0.3s;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+.tag {
+  background-color: #d1f3ef;
+  color: #00756a;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Carousel buttons overlayed */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn.left {
+  left: -20px;
+}
+
+.carousel-btn.right {
+  right: -20px;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

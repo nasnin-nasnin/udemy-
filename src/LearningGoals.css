@@ -1,0 +1,121 @@
+.learning-goals-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.left-boxes {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.info-box {
+  display: flex;
+  gap: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+
+
+
+/* Add this for hover effect on all boxes */
+.info-box:hover {
+  border-color: #7c3aed;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  border-left: 6px solid #7c3aed;
+}
+
+/* Also make the icon color fully visible on hover */
+.info-box:hover .icon img {
+  filter: none;
+  opacity: 1;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.info-box.highlighted .icon img {
+  filter: none;
+  opacity: 1;
+}
+
+.text-content h4 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plan-tag {
+  background-color: #ddd;
+  color: #444;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.link {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  color: #7c3aed;
+  text-decoration: none;
+  font-size: 14px;
+  gap: 6px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.text-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.right-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}

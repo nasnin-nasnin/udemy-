@@ -1,0 +1,176 @@
+/* Navbar Container */
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;   /* ⬅️ increased padding to make navbar taller */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+}
+
+.logo-highlight {
+  color: #a435f0; /* Udemy purple */
+  position: relative;
+}
+
+/* Small arrow above the "u" */
+.logo-u::before {
+  content: "";
+  position: absolute;
+  top: -8px;     /* Move arrow above */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;   /* left side */
+  border-right: 6px solid transparent;  /* right side */
+  border-bottom: 6px solid #a435f0;     /* purple arrow pointing up */
+}
+
+
+.nav-link {
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+/* Search Section */
+.navbar-search {
+  flex: 1;
+  max-width: 200px;   /* ⬅️ reduced from 500px to 350px */
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px 10px 36px;  /* ⬅️ slightly taller input */
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  border-color: #a435f0;
+  box-shadow: 0 0 0 2px rgba(164,53,240,0.2);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 14px;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  font-size: 14px;
+  padding: 8px 16px;  /* ⬅️ slightly bigger buttons to match navbar height */
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.btn-outline {
+  border: 1px solid #999;
+  background: white;
+}
+
+.btn-outline:hover {
+  background: #f3f3f3;
+}
+
+.btn-primary {
+  background: #a435f0;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #8a2cd1;
+}
+
+.btn-icon {
+  border: 1px solid #999;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-box {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.dropdown-box h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.dropdown-box p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.dropdown-box .btn-primary {
+  background: #5624d0;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

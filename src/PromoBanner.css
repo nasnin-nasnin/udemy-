@@ -1,0 +1,49 @@
+/* Container with background image */
+.promo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* white box on the left */
+  height: 300px;
+  padding: 20px 40px;
+
+  background: url("./images/promo.png") no-repeat center center/contain;
+  background-color: #e4cccc; /* fallback background to fill empty spaces */
+}
+
+
+/* White offer box */
+.promo-box {
+  background: white;
+  padding: 24px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+}
+
+.promo-box h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.promo-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.promo-btn {
+  background: #a435f0;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.promo-btn:hover {
+  background: #8a2cd1;
+}

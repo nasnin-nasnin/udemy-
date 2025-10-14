@@ -1,0 +1,27 @@
+.career-container {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9fb;
+  max-width: 1000px;   /* ❗ wider than 3×card width */
+  margin: 0 auto;      /* center the whole section */
+}
+
+
+.card-list {
+  display: flex;
+  justify-content: center;  /* center the row */
+  gap: 2rem;              /* spacing between cards */
+  flex-wrap: nowrap;        /* ❗ keep all cards on one row */
+}
+
+
+.all-careers-button {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: #5624d0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}

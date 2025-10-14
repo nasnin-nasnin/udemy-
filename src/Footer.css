@@ -1,0 +1,124 @@
+.footer {
+  background: #1c1d1f;
+  color: #fff;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+}
+.footer-copy {
+  display: flex;
+  justify-content: space-between; /* left | center | right */
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.udemy-logo {
+  height: 28px;
+}
+
+/* ✅ Center Button */
+.cookie-btn {
+  background: transparent;
+  border: none;        /* ✅ remove border */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;  /* optional (won't show without border) */
+  cursor: pointer;
+}
+.cookie-btn:hover {
+  background: #333;    /* keep hover background if you like */
+}
+/* Right Button (already present) */
+.lang-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.lang-btn:hover {
+  background: #333;
+}
+
+
+
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.footer-top p {
+  font-size: 18px;
+}
+
+.footer-top .link {
+  color: #c0aaff;
+  cursor: pointer;
+}
+
+.footer-logos img {
+  height: 28px;
+  margin-left: 20px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 30px;
+}
+
+.footer-bottom-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+}
+
+.footer-bottom-links h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom-links li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+
+
+
