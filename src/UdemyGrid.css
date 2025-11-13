@@ -1,3 +1,7 @@
+/* ==============================
+   🌟 UDEMY GRID / COURSE SECTION
+============================== */
+
 .udemy-grid-container {
   width: 90%;
   max-width: 1200px;
@@ -10,13 +14,17 @@
 .subtitle {
   color: #666;
   margin-bottom: 24px;
+  text-align: center;
 }
 
+/* -------- CATEGORY TABS -------- */
 .category-tabs {
   display: flex;
   gap: 20px;
   font-size: 16px;
   margin-bottom: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .category-tab {
@@ -24,6 +32,7 @@
   border-bottom: 2px solid transparent;
   cursor: pointer;
   color: #222;
+  transition: 0.2s;
 }
 
 .category-tab.active {
@@ -31,11 +40,14 @@
   font-weight: 600;
 }
 
+/* -------- SKILLS TAGS -------- */
 .skills-tab-row {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skills-tab {
@@ -45,6 +57,11 @@
   cursor: pointer;
   color: #333;
   font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.skills-tab:hover {
+  background: #ddd;
 }
 
 .skills-tab.active {
@@ -58,22 +75,30 @@
   margin-left: 6px;
 }
 
+/* -------- CAROUSEL (COURSE ROW) -------- */
 .courses-carousel-row {
   display: flex;
   align-items: center;
   gap: 24px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .course-card {
   background: #fff;
   border-radius: 8px;
   width: 310px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
 }
 
 .course-image {
@@ -122,6 +147,7 @@
   border-radius: 12px;
 }
 
+/* -------- BUTTONS -------- */
 .show-more-btn {
   background: #5624d0;
   color: #fff;
@@ -132,8 +158,14 @@
   margin: 30px auto;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+.show-more-btn:hover {
+  background: #421ca3;
+}
+
+/* -------- TRUSTED LOGOS -------- */
 .trusted-logos {
   text-align: center;
   margin-top: 36px;
@@ -150,12 +182,15 @@
   gap: 32px;
   justify-content: center;
   margin-top: 4px;
+  flex-wrap: wrap;
 }
 
 .trusted-logo {
   height: 32px;
+  max-width: 100px;
 }
 
+/* -------- CAROUSEL ARROWS -------- */
 .carousel-arrow {
   background: #eee;
   border: none;
@@ -169,7 +204,6 @@
   justify-content: center;
   margin: 0 8px;
   transition: background 0.2s;
-  position: relative; /* important for ::before */
 }
 
 .carousel-arrow:hover {
@@ -187,12 +221,94 @@
   font-weight: bold;
   color: #222;
 }
-.skills-tab-row,
-.courses-carousel-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  overflow: visible; /* make sure buttons are not hidden */
+
+/* ==============================
+   📱 RESPONSIVE DESIGN
+============================== */
+
+/* ---- Tablet Screens ---- */
+@media (max-width: 992px) {
+  .udemy-grid-container {
+    padding: 20px;
+  }
+
+  .category-tabs {
+    font-size: 15px;
+    gap: 12px;
+  }
+
+  .courses-carousel-row {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .course-card {
+    width: 45%; /* 2 per row */
+  }
+
+  .trusted-logo {
+    height: 28px;
+  }
 }
 
+/* ---- Mobile Screens ---- */
+@media (max-width: 600px) {
+  .udemy-grid-container {
+    width: 95%;
+    padding: 16px;
+  }
 
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .category-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skills-tab-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .skills-tab-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .courses-carousel-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 16px;
+    scrollbar-width: none;
+  }
+  .courses-carousel-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .course-card {
+    min-width: 260px;
+    width: 85%;
+  }
+
+  .show-more-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .logo-row {
+    gap: 20px;
+  }
+
+  .trusted-logo {
+    height: 24px;
+  }
+}

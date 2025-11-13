@@ -1,67 +1,29 @@
+/* =========================
+   🌐 Base Styles
+========================= */
 .footer {
   background: #1c1d1f;
   color: #fff;
   padding: 40px 60px;
   font-family: Arial, sans-serif;
 }
-.footer-copy {
-  display: flex;
-  justify-content: space-between; /* left | center | right */
-  align-items: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  font-size: 14px;
-}
 
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.udemy-logo {
-  height: 28px;
-}
-
-/* ✅ Center Button */
-.cookie-btn {
-  background: transparent;
-  border: none;        /* ✅ remove border */
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;  /* optional (won't show without border) */
-  cursor: pointer;
-}
-.cookie-btn:hover {
-  background: #333;    /* keep hover background if you like */
-}
-/* Right Button (already present) */
-.lang-btn {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.lang-btn:hover {
-  background: #333;
-}
-
-
-
-
+/* -------------------------
+   🏗️ Top Section
+-------------------------- */
 .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 30px;
   border-bottom: 1px solid #333;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .footer-top p {
   font-size: 18px;
+  margin: 0;
 }
 
 .footer-top .link {
@@ -74,6 +36,9 @@
   margin-left: 20px;
 }
 
+/* -------------------------
+   🔗 Links Section
+-------------------------- */
 .footer-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -95,8 +60,16 @@
   font-size: 14px;
   margin-bottom: 6px;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
+.footer-links li:hover {
+  color: #c0aaff;
+}
+
+/* -------------------------
+   🧱 Bottom Section
+-------------------------- */
 .footer-bottom {
   border-top: 1px solid #333;
   padding-top: 30px;
@@ -117,8 +90,150 @@
   font-size: 14px;
   margin-bottom: 6px;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
+.footer-bottom-links li:hover {
+  color: #c0aaff;
+}
 
+/* -------------------------
+   ⚙️ Copy Section
+-------------------------- */
+.footer-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.udemy-logo {
+  height: 28px;
+}
+
+/* Center Button */
+.cookie-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.cookie-btn:hover {
+  background: #333;
+}
+
+/* Right Button */
+.lang-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.lang-btn:hover {
+  background: #333;
+}
+
+/* =========================
+   🖥️ Desktop (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 50px 80px;
+  }
+}
+
+/* =========================
+   💻 Tablet (600–1023px)
+========================= */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .footer {
+    padding: 30px 40px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .footer-links,
+  .footer-bottom-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-copy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-left img {
+    height: 26px;
+  }
+}
+
+/* =========================
+   📱 Mobile (≤599px)
+========================= */
+@media (max-width: 599px) {
+  .footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-logos {
+    margin-top: 10px;
+  }
+
+  .footer-logos img {
+    height: 24px;
+    margin: 0 8px;
+  }
+
+  .footer-links,
+  .footer-bottom-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-copy {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .cookie-btn,
+  .lang-btn {
+    width: 100%;
+    max-width: 220px;
+    font-size: 14px;
+  }
+
+  .udemy-logo {
+    height: 24px;
+  }
+}

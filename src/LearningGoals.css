@@ -9,12 +9,14 @@
 h2 {
   font-weight: 700;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .content {
   display: flex;
   gap: 40px;
   align-items: flex-start;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .left-boxes {
@@ -35,16 +37,13 @@ h2 {
   position: relative;
 }
 
-
-
-/* Add this for hover effect on all boxes */
+/* Hover effect */
 .info-box:hover {
   border-color: #7c3aed;
   box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
   border-left: 6px solid #7c3aed;
 }
 
-/* Also make the icon color fully visible on hover */
 .info-box:hover .icon img {
   filter: none;
   opacity: 1;
@@ -118,4 +117,65 @@ h2 {
   max-width: 100%;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .right-image {
+    order: -1; /* show image above text */
+  }
+
+  .info-box {
+    padding: 16px;
+  }
+
+  .text-content h4 {
+    font-size: 15px;
+  }
+
+  .text-content p {
+    font-size: 13px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .learning-goals-container {
+    padding: 20px 12px;
+  }
+
+  .info-box {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 14px;
+  }
+
+  .icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .text-content h4 {
+    font-size: 14px;
+  }
+
+  .text-content p {
+    font-size: 12px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+
+  .right-image img {
+    width: 90%;
+  }
 }

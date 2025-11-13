@@ -1,3 +1,6 @@
+/* =========================
+   🌐 Base Styles
+========================= */
 .carousel-container {
   width: 100%;
   max-width: 1200px;
@@ -22,8 +25,12 @@ h2 {
   gap: 16px;
   overflow: hidden;
   flex: 1;
+  scroll-behavior: smooth;
 }
 
+/* -------------------------
+   🧩 Card Styles
+-------------------------- */
 .card {
   flex: 0 0 25%;
   border: 1px solid #ddd;
@@ -32,6 +39,10 @@ h2 {
   background-color: #fff;
   transition: transform 0.3s;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -58,7 +69,9 @@ h2 {
   margin-top: 6px;
 }
 
-/* Carousel buttons overlayed */
+/* -------------------------
+   🎯 Carousel Buttons
+-------------------------- */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -75,6 +88,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(240, 240, 240, 1);
 }
 
 .carousel-btn.left {
@@ -88,4 +106,84 @@ h2 {
 .carousel-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+/* =========================
+   🖥️ Desktop (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 25%; /* 4 cards per row */
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+/* =========================
+   💻 Tablet (600–1023px)
+========================= */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .carousel-track {
+    gap: 12px;
+  }
+
+  .card {
+    flex: 0 0 45%; /* 2 cards per row */
+  }
+
+  .card h3 {
+    font-size: 15px;
+  }
+
+  .carousel-btn.left {
+    left: -10px;
+  }
+
+  .carousel-btn.right {
+    right: -10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   📱 Mobile (≤599px)
+========================= */
+@media (max-width: 599px) {
+  .carousel-container {
+    padding: 10px;
+  }
+
+  .carousel-track {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: visible;
+  }
+
+  .card {
+    flex: 0 0 100%;
+    width: 90%;
+    max-width: 340px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .tag {
+    font-size: 11px;
+  }
+
+  .carousel-btn {
+    display: none; /* Hide arrows for mobile (use swipe/scroll) */
+  }
+
+  h2 {
+    font-size: 20px;
+  }
 }

@@ -1,30 +1,29 @@
+/* ==============================
+   🌟 TRENDING SECTION
+============================== */
+
 .trending-wrapper {
-  width: 100%;            /* take full width of the page */
-  max-width: none;        /* remove any max width limit */
-  margin: 0;              /* remove auto-centering margins */
-  padding: 40px 20px;     /* keep some internal padding if you like */
+  width: 100%;
+  margin: 0;
+  padding: 60px 40px;
   text-align: left;
-    display: block !important;
-       /* force text left */
+  background: #fafafa;
 }
 
-
-
 .trending-title {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: #222;
 }
 
 .trending-line {
   border: none;
   border-top: 1px solid #ddd;
-  margin-bottom: 30px;
-  text-align: left;
+  margin-bottom: 40px;
 }
 
-/* ----------- GRID ----------- */
+/* -------- GRID -------- */
 .trending-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,6 +48,7 @@
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 .chatgpt-link:hover { text-decoration: underline; }
 
@@ -58,26 +58,26 @@
   font-size: 14px;
 }
 
+/* -------- BUTTON -------- */
 .trending-btn {
   display: inline-block;
   padding: 10px 18px;
-  background: #fff;               /* white background */
-  color: #6a0dad;                 /* purple text */
-  border: 2px solid #6a0dad;      /* purple border */
+  background: #fff;
+  color: #6a0dad;
+  border: 2px solid #6a0dad;
   font-weight: 600;
   border-radius: 4px;
   text-decoration: none;
   font-size: 14px;
-  transition: all 0.3s ease;      /* smooth hover transition */
+  transition: all 0.3s ease;
 }
 
 .trending-btn:hover {
-  background: #6a0dad;            /* purple background on hover */
-  color: #fff;                    /* white text on hover */
+  background: #6a0dad;
+  color: #fff;
 }
 
-
-/* ----------- COLUMNS ----------- */
+/* -------- COLUMN TITLES -------- */
 .trending-col .col-title {
   font-weight: 700;
   font-size: 18px;
@@ -85,18 +85,20 @@
   color: #222;
 }
 
-
-.skill-link:hover { text-decoration: underline; }
-
-
-/* Add more spacing between each course link */
+/* -------- SKILL LINKS -------- */
 .skill-link {
   display: block;
   color: #6a0dad;
   font-weight: 600;
-  margin-bottom: 20px;   /* ⬅️ increase from 14px to 20px (or any value you like) */
+  margin-bottom: 20px;
   text-decoration: none;
-  line-height: 1.4;      /* ⬅️ slightly taller line-height for breathing room */
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.skill-link:hover {
+  color: #450a8f;
+  text-decoration: underline;
 }
 
 .skill-link .learners {
@@ -104,7 +106,7 @@
   color: #555;
   font-weight: normal;
   font-size: 13px;
-  margin-top: 4px;       /* ⬅️ a bit more gap between title & learner count */
+  margin-top: 4px;
 }
 
 .arrow {
@@ -113,16 +115,57 @@
   color: #6a0dad;
 }
 
-/* ----------- RESPONSIVE ----------- */
+/* ==============================
+   📱 RESPONSIVE DESIGN
+============================== */
+
+/* ---- Medium screens (tablets) ---- */
 @media (max-width: 992px) {
+  .trending-wrapper {
+    padding: 50px 30px;
+  }
+
+  .trending-title {
+    font-size: 26px;
+  }
+
   .trending-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 }
 
+/* ---- Small screens (mobile) ---- */
 @media (max-width: 600px) {
+  .trending-wrapper {
+    padding: 40px 16px;
+  }
+
+  .trending-title {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .trending-line {
+    margin-bottom: 25px;
+  }
+
   .trending-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .chatgpt-top {
+    font-size: 18px;
+  }
+
+  .skill-link {
+    margin-bottom: 16px;
+  }
+
+  .trending-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
   }
 }

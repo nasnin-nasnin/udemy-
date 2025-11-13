@@ -1,4 +1,6 @@
-/* Container with background image */
+/* ================= BASE STYLES ================= */
+
+/* Background container */
 .promo-container {
   position: relative;
   display: flex;
@@ -10,7 +12,6 @@
   background: url("./images/promo.png") no-repeat center center/contain;
   background-color: #e4cccc; /* fallback background to fill empty spaces */
 }
-
 
 /* White offer box */
 .promo-box {
@@ -46,4 +47,66 @@
 
 .promo-btn:hover {
   background: #8a2cd1;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .promo-container {
+    height: 250px;
+    padding: 20px;
+    background-size: cover; /* make image fill area */
+    justify-content: center; /* center the box */
+  }
+
+  .promo-box {
+    max-width: 360px;
+    text-align: center;
+  }
+
+  .promo-box h2 {
+    font-size: 18px;
+  }
+
+  .promo-box p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .promo-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 40px 20px;
+    background: url("./images/promo.png") no-repeat top center/cover;
+  }
+
+  .promo-box {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95); /* semi-transparent for readability */
+  }
+
+  .promo-box h2 {
+    font-size: 17px;
+  }
+
+  .promo-box p {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .promo-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 13px;
+  }
 }

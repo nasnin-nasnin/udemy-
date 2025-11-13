@@ -1,3 +1,5 @@
+/* ================= BASE STYLES ================= */
+
 .report-wrapper {
   background: #fafafa;
   padding: 60px 20px;
@@ -10,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .report-text {
@@ -42,6 +45,7 @@
   text-decoration: none;
   transition: background 0.3s ease;
 }
+
 .report-btn:hover {
   background-color: #5500aa;
 }
@@ -56,4 +60,70 @@
   height: auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border-radius: 6px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .report-wrapper {
+    padding: 50px 20px;
+  }
+
+  .report-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .report-text {
+    padding-right: 0;
+  }
+
+  .report-title {
+    font-size: 28px;
+  }
+
+  .report-desc {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .report-btn {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+
+  .report-image img {
+    max-width: 80%;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .report-wrapper {
+    padding: 40px 16px;
+  }
+
+  .report-title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .report-desc {
+    font-size: 14px;
+  }
+
+  .report-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .report-image img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 }

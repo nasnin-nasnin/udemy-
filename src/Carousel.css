@@ -1,7 +1,11 @@
+/* =========================
+   🌐 Base Styles
+========================= */
 .carousel-wrapper {
   width: 90%;
   max-width: 1200px;
   margin: 40px auto;
+  position: relative;
 }
 
 .slide-container {
@@ -10,10 +14,14 @@
   padding: 40px;
   gap: 40px;
   align-items: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
+/* Text Section */
 .slide-text {
   flex: 1;
+  text-align: left;
 }
 
 .company {
@@ -31,6 +39,7 @@
   display: flex;
   gap: 40px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Prevent overflow on smaller screens */
 }
 
 .stats h3 {
@@ -45,8 +54,14 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+.read-btn:hover {
+  background: #4a1fb5;
+}
+
+/* Image Section */
 .slide-image {
   flex: 1;
 }
@@ -56,6 +71,8 @@
   height: auto;
   border-radius: 4px;
 }
+
+/* Dots & Arrows */
 .custom-dots-arrows {
   display: flex;
   align-items: center;
@@ -64,6 +81,7 @@
   bottom: 20px;
   left: 30px;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 .custom-arrow {
@@ -78,6 +96,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background: #ddd;
 }
 
 .custom-dots-arrows ul {
@@ -94,8 +117,109 @@
   border-radius: 50%;
   border: none;
   background: #bbb;
+  cursor: pointer;
 }
 
 .custom-dots-arrows li.slick-active button {
   background: #5624d0;
+}
+
+/* =========================
+   🖥️ Desktop (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+  .slide-container {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .slide-text h2 {
+    font-size: 28px;
+  }
+
+  .stats h3 {
+    font-size: 36px;
+  }
+}
+
+/* =========================
+   💻 Tablet (600–1023px)
+========================= */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .slide-container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .slide-text h2 {
+    font-size: 22px;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .stats h3 {
+    font-size: 28px;
+  }
+
+  .slide-image {
+    width: 80%;
+  }
+
+  .custom-dots-arrows {
+    position: static;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+/* =========================
+   📱 Mobile (≤599px)
+========================= */
+@media (max-width: 599px) {
+  .carousel-wrapper {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .slide-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .slide-text h2 {
+    font-size: 20px;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stats h3 {
+    font-size: 24px;
+  }
+
+  .slide-image {
+    width: 100%;
+  }
+
+  .read-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .custom-dots-arrows {
+    position: static;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 }

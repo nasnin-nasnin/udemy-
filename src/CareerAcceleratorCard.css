@@ -1,11 +1,12 @@
 .card {
   width: 280px;
-  flex: 0 0 280px;   /* ❗ keep a fixed width */
+  flex: 0 0 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
@@ -22,4 +23,51 @@
   gap: 4px;
   font-size: 14px;
   color: #555;
+}
+
+/* -------------------------------------- */
+/* 🖥️ Large Screens (desktops) - default */
+/* -------------------------------------- */
+@media (min-width: 1024px) {
+  .card {
+    width: 280px;
+  }
+}
+
+/* -------------------------------------- */
+/* 💻 Tablets (medium screens) */
+/* -------------------------------------- */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .card {
+    width: 45%;           /* show 2 cards per row */
+    flex: 0 0 45%;
+    margin-bottom: 20px;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .rating {
+    font-size: 13px;
+  }
+}
+
+/* -------------------------------------- */
+/* 📱 Mobile (small screens) */
+/* -------------------------------------- */
+@media (max-width: 599px) {
+  .card {
+    width: 90%;           /* full width with margin */
+    flex: 0 0 90%;
+    margin: 10px auto;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+
+  .rating {
+    font-size: 12px;
+  }
 }

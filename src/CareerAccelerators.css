@@ -1,20 +1,52 @@
+/* =========================
+   🌐 Base Styles
+========================= */
 .career-container {
   padding: 2rem;
   text-align: center;
   background-color: #f9f9fb;
-  max-width: 1000px;   /* ❗ wider than 3×card width */
-  margin: 0 auto;      /* center the whole section */
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-
+/* Flexbox card layout */
 .card-list {
   display: flex;
-  justify-content: center;  /* center the row */
-  gap: 2rem;              /* spacing between cards */
-  flex-wrap: nowrap;        /* ❗ keep all cards on one row */
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  transition: all 0.3s ease;
 }
 
+/* Individual cards */
+.card {
+  width: 280px;
+  flex: 0 0 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rating {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* All Careers Button */
 .all-careers-button {
   margin-top: 2rem;
   padding: 10px 20px;
@@ -24,4 +56,75 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.all-careers-button:hover {
+  background-color: #4a1fb5;
+}
+
+/* =========================
+   🖥️ Desktop (≥1024px)
+========================= */
+@media (min-width: 1024px) {
+  .card-list {
+    flex-wrap: nowrap; /* All cards in one row */
+  }
+}
+
+/* =========================
+   💻 Tablet (600–1023px)
+========================= */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .card-list {
+    flex-wrap: wrap;       /* Allow wrapping */
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 45%;            /* Two cards per row */
+    flex: 0 0 45%;
+  }
+
+  .card-image {
+    height: 160px;
+  }
+
+  .rating {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   📱 Mobile (≤599px)
+========================= */
+@media (max-width: 599px) {
+  .career-container {
+    padding: 1rem;
+  }
+
+  .card-list {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .card {
+    width: 90%;
+    flex: 0 0 90%;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+
+  .rating {
+    font-size: 12px;
+  }
+
+  .all-careers-button {
+    width: 100%;
+    font-size: 15px;
+  }
 }

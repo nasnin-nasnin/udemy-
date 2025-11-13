@@ -1,28 +1,5 @@
-.testimonial-card {
-  position: relative;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 40px 20px 20px;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/* ================= BASE STYLES ================= */
 
-
-/* NEW: big decorative quote mark */
-.testimonial-card::before {
-  content: "“";                 /* or ❝ if you prefer */
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  font-size: 60px;               /* make it big */
-  color: #131212;                /* light grey for subtle look */
-  font-family: Georgia, serif;   /* classic quote font */
-  line-height: 1;
-  pointer-events: none;          /* so it doesn't block text selection */
-}
 .testimonial-wrapper {
   padding: 40px 20px;
   background: #f7f7f7;
@@ -43,7 +20,30 @@
   box-sizing: border-box;
 }
 
+.testimonial-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px 20px 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+/* Decorative quote mark */
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 60px;
+  color: #131212;
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
 
 .testimonial-quote {
   color: #555;
@@ -84,22 +84,26 @@
 .testimonial-course:hover {
   text-decoration: underline;
 }
-/* make default arrows bigger and darker */
+
+/* Slick arrows */
 .slick-prev, .slick-next {
   width: 40px;
   height: 40px;
   z-index: 2;
 }
+
 .slick-prev:before, .slick-next:before {
   font-size: 40px;
-  color: #333;    /* arrow color */
+  color: #333;
   opacity: 0.8;
 }
+
 .slick-disabled {
   opacity: 0.3;
   pointer-events: none;
 }
 
+/* Custom arrows */
 .custom-arrow {
   position: absolute;
   top: 50%;
@@ -115,6 +119,89 @@
   line-height: 40px;
   z-index: 2;
 }
+
 .custom-arrow.prev { left: -20px; }
 .custom-arrow.next { right: -20px; }
 .custom-arrow:hover { background: #f3dede; }
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .testimonial-heading {
+    font-size: 22px;
+  }
+
+  .testimonial-card {
+    padding: 30px 18px 18px;
+  }
+
+  .testimonial-card::before {
+    font-size: 50px;
+    top: 5px;
+    left: 15px;
+  }
+
+  .testimonial-quote {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .custom-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .custom-arrow.prev { left: -10px; }
+  .custom-arrow.next { right: -10px; }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .testimonial-wrapper {
+    padding: 30px 12px;
+  }
+
+  .testimonial-heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card {
+    padding: 24px 16px 16px;
+    min-height: auto;
+  }
+
+  .testimonial-card::before {
+    font-size: 40px;
+    top: 0;
+    left: 10px;
+  }
+
+  .testimonial-quote {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .testimonial-course {
+    font-size: 12px;
+  }
+
+  .custom-arrow {
+    display: none; /* hide arrows for small screens */
+  }
+}
